@@ -1,0 +1,173 @@
+@import "../../style/variables.scss";
+@import "../../style/config/colors.scss";
+@import "../../style/config/media.scss";
+
+.header {
+	position: fixed;
+	z-index: 6;
+	width: 100%;
+	background-color: $transparent-green;
+	$self: &;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin: 10px 20px;
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 2;
+		width: 70px;
+		height: 70px;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+
+		#{$self} {
+			&__list {
+				display: flex;
+			}
+
+			&__item {
+				margin-right: 50px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			&__link {
+				margin: 20px 0;
+				font-size: 24px;
+				line-height: 34px;
+				transition: color 0.1s linear;
+
+				&:hover {
+					color: $main-color;
+				}
+			}
+		}
+	}
+
+	&__menu {
+		display: none;
+	}
+}
+
+@media (max-width: $md) {
+	.header {
+		$self: &;
+
+		&__nav {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: 0;
+			left: 100%;
+			width: 100%;
+			height: 100vh;
+			background-color: $transparent-green;
+			transition: left 0.3s linear;
+
+			#{$self} {
+				&__list {
+					flex-direction: column;
+				}
+
+				&__item {
+					display: flex;
+					justify-content: center;
+					margin-right: 0;
+				}
+			}
+
+			&_active {
+				position: fixed;
+				left: 0;
+			}
+		}
+
+		&__menu {
+			position: relative;
+			z-index: 2;
+			display: block;
+
+			#{$self}__hamburger {
+				margin: 5px 0 0 0;
+				text-align: center;
+
+				svg {
+					width: 80px;
+					height: 50px;
+					cursor: pointer;
+					transform: translate3d(0px, 0px, 0px);
+				}
+
+				svg:not(:root) {
+					overflow: hidden;
+				}
+
+				path.top,
+				path.bottom {
+					stroke-dasharray: 240px, 950px;
+				}
+
+				path {
+					fill: none;
+					stroke: #000;
+					stroke-dashoffset: 0;
+					stroke-linecap: round;
+					stroke-width: 40px;
+					transition: stroke-dashoffset 0.5s
+							cubic-bezier(0.25, -0.25, 0.75, 1.25) 0s,
+						stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) 0s;
+				}
+
+				path.middle {
+					stroke-dasharray: 240px, 240px;
+				}
+
+				path {
+					fill: none;
+					stroke: #000;
+					stroke-dashoffset: 0;
+					stroke-linecap: round;
+					stroke-width: 40px;
+					transition: stroke-dashoffset 0.5s
+							cubic-bezier(0.25, -0.25, 0.75, 1.25) 0s,
+						stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25) 0s;
+				}
+
+				&.active path.top,
+				&.active path.bottom {
+					stroke-dashoffset: -650px;
+				}
+
+				path.top,
+				path.bottom {
+					stroke-dasharray: 240px, 950px;
+				}
+
+				&.active path.middle {
+					stroke-dasharray: 1px, 220px;
+					stroke-dashoffset: -115px;
+				}
+			}
+		}
+	}
+}

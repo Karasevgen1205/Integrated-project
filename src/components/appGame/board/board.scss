@@ -1,0 +1,10 @@
+.board {
+	height: max-content;
+	box-shadow: 0 0 47px #ffffff;
+
+	&__row:after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}
