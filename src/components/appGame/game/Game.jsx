@@ -5,18 +5,15 @@ import calculateWinner from "../../../services/calculateWinner";
 import "./game.scss";
 
 class Game extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			history: [
-				{
-					squares: Array(9).fill(null),
-				},
-			],
-			stepNumber: 0,
-			xIsNext: true,
-		};
-	}
+	state = {
+		history: [
+			{
+				squares: Array(9).fill(null),
+			},
+		],
+		stepNumber: 0,
+		xIsNext: true,
+	};
 
 	handleClick(i) {
 		const history = this.state.history.slice(0, this.state.stepNumber + 1);
