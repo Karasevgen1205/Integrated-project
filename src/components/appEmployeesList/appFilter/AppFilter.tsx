@@ -1,10 +1,5 @@
 import "./appFilter.scss";
 
-// type AppFilterPropsType = {
-// 	category: string;
-// 	onChangeBtn: () => { object: object };
-// };
-
 interface IAppFilterProps {
 	category: string;
 	onChangeBtn: (item: string) => void;

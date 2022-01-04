@@ -1,8 +1,18 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Board from "../board/Board";
 import Info from "../info/Info";
 import calculateWinner from "../../../services/calculateWinner";
 import "./game.scss";
+
+// interface IGame {
+// 			history: [
+// 				{
+// 					squares: Array<null | number>,
+// 				}
+// 			],
+// 			stepNumber: number,
+// 			xIsNext: boolean,
+// }
 
 class Game extends Component {
 	state = {
