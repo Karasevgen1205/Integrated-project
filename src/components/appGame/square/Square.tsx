@@ -1,6 +1,11 @@
 import "./square.scss";
 
-const Square = ({ value, onClick }) => {
+interface ISquare {
+	value: string;
+	onClick: () => void;
+}
+
+const Square = ({ value, onClick }: ISquare) => {
 	return (
 		<button className="square" onClick={onClick}>
 			{value}

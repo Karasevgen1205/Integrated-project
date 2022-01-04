@@ -4,7 +4,7 @@ import linkedin from "../../resources/img/linkedin.svg";
 import github from "../../resources/img/github.svg";
 import "./footer.scss";
 
-const Footer = () => {
+const Footer: React.FC = () => {
 	return (
 		<footer className="footer">
 			<div className="container">

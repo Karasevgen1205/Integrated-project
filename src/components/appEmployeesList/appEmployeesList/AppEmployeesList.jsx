@@ -7,6 +7,11 @@ import EmployeesAddForm from "../employeesAddForm/EmployeesAddForm";
 
 import "./appEmployeesList.scss";
 
+// interface IAppEmployeesList {
+// 	category: string;
+// 	onChangeBtn: (item: string) => void;
+// }
+
 class AppEmployeesList extends Component {
 	state = {
 		data: [

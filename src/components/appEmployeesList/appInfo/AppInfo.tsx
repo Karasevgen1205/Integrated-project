@@ -1,6 +1,11 @@
 import "./appInfo.scss";
 
-const AppInfo = ({ employees, increase }) => {
+type TitlePropsType = {
+	employees: number;
+	increase: number;
+};
+
+const AppInfo = ({ employees, increase }: TitlePropsType) => {
 	return (
 		<div className="app-info">
 			<h1>Учет сотрудников в компании N</h1>

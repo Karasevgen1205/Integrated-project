@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./search-panel.scss";
 
-const SearchPanel = ({ onChangeFilter }) => {
-	const [filter, setFilter] = useState("");
+interface ISearchPanel {
+	onChangeFilter: (item: string) => void;
+}
+
+const SearchPanel = ({ onChangeFilter }: ISearchPanel) => {
+	const [filter, setFilter] = useState<string>("");
 
 	return (
 		<input

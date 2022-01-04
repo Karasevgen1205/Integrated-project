@@ -1,4 +1,3 @@
-import { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -8,25 +7,23 @@ import AppEmployeesList from "../appEmployeesList/appEmployeesList/AppEmployeesL
 import Home from "../home/Home";
 import "./app.scss";
 
-class App extends Component {
-	render() {
-		return (
-			<Router>
-				<div className="all-works">
-					<Header />
-					<main className="app">
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/tic-tac-toe" element={<Game />} />
-							<Route path="/marvel" element={<AppMarvel />} />
-							<Route path="/employees-list" element={<AppEmployeesList />} />
-						</Routes>
-					</main>
-					<Footer />
-				</div>
-			</Router>
-		);
-	}
-}
+const App = () => {
+	return (
+		<Router>
+			<div className="all-works">
+				<Header />
+				<main className="app">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/tic-tac-toe" element={<Game />} />
+						<Route path="/marvel" element={<AppMarvel />} />
+						<Route path="/employees-list" element={<AppEmployeesList />} />
+					</Routes>
+				</main>
+				<Footer />
+			</div>
+		</Router>
+	);
+};
 
 export default App;

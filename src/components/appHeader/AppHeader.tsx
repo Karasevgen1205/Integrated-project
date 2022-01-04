@@ -1,6 +1,7 @@
+import React from "react";
 import "./appHeader.scss";
 
-const AppHeader = () => {
+const AppHeader: React.FC = () => {
 	return (
 		<section className="marvel-header">
 			<div className="container">

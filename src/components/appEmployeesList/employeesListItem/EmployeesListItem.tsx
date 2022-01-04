@@ -1,5 +1,14 @@
 import "./employeesListItem.scss";
 
+interface IEmployeesListItem {
+	name: string;
+	salary: number;
+	onDeleteItem: () => void;
+	increase: boolean;
+	like: boolean;
+	onChangeProp: () => void;
+}
+
 const EmployeesListItem = ({
 	name,
 	salary,
@@ -7,7 +16,7 @@ const EmployeesListItem = ({
 	increase,
 	like,
 	onChangeProp,
-}) => {
+}: IEmployeesListItem) => {
 	let classNames = "list-group-item d-flex justify-content-between";
 	if (increase) {
 		classNames += " increase";
