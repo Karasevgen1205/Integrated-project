@@ -1,21 +1,7 @@
 import { BlockLike } from "typescript";
 import EmployeesListItem from "../employeesListItem/EmployeesListItem";
-
+import { IEmployeesListProps, IData } from "./types";
 import "./employeesList.scss";
-
-interface IData {
-  id: number;
-  increase: boolean;
-  like: boolean;
-  name: string;
-  salary: number;
-}
-
-interface IEmployeesListProps {
-  data: IData[];
-  onDeleteItem: any;
-  onChangeProp: any;
-}
 
 const EmployeesList = ({
   data,
