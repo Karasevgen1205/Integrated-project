@@ -1,8 +1,27 @@
+import { BlockLike } from "typescript";
 import EmployeesListItem from "../employeesListItem/EmployeesListItem";
 
 import "./employeesList.scss";
 
-const EmployeesList = ({ data, onDeleteItem, onChangeProp }) => {
+interface IData {
+  id: number;
+  increase: boolean;
+  like: boolean;
+  name: string;
+  salary: number;
+}
+
+interface IEmployeesListProps {
+  data: IData[];
+  onDeleteItem: any;
+  onChangeProp: any;
+}
+
+const EmployeesList = ({
+  data,
+  onDeleteItem,
+  onChangeProp,
+}: IEmployeesListProps) => {
   const elements = data.map((item) => {
     const { id, ...itemProps } = item;
     return (
@@ -12,7 +31,7 @@ const EmployeesList = ({ data, onDeleteItem, onChangeProp }) => {
         onDeleteItem={() => {
           onDeleteItem(id);
         }}
-        onChangeProp={(e) => {
+        onChangeProp={(e?: any) => {
           const a = e.currentTarget.getAttribute("data-prop");
           onChangeProp(id, a);
         }}
