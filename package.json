@@ -20,6 +20,9 @@
     "prop-types": "^15.8.0",
     "sass": "^1.38.0"
   },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
