@@ -24,7 +24,7 @@ const RandomChar = () => {
     ],
   };
 
-  const [char, setShar] = useState<ITransformCharacter>(defaultChar);
+  const [char, setChar] = useState<ITransformCharacter>(defaultChar);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
 
@@ -35,7 +35,7 @@ const RandomChar = () => {
   }, []);
 
   const onCharLoaded = (char: ITransformCharacter) => {
-    setShar(char);
+    setChar(char);
     setLoading(false);
     setError(false);
   };
@@ -53,10 +53,7 @@ const RandomChar = () => {
   const updateChar = () => {
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
     onCharLoading();
-    marvelService
-      .getCharacter(id)
-      .then((responce) => onCharLoaded(responce))
-      .catch(onError);
+    marvelService.getCharacter(id).then(onCharLoaded).catch(onError);
   };
 
   const View = ({ char }: { char: ITransformCharacter }) => {
