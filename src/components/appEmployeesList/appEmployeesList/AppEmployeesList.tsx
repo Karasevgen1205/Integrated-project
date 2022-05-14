@@ -22,6 +22,9 @@ const AppEmployeesList = () => {
   const [category, setCategory] = useState<string>("all");
   const [maxItemId, setMaxItemId] = useState<number>(3);
 
+  const employees = data.length;
+  const newIncrease = data.filter((item) => item.increase).length;
+
   const onDeleteItem = (id: number) => {
     setData((prevState) => prevState.filter((item) => item.id !== id));
   };
@@ -92,17 +95,13 @@ const AppEmployeesList = () => {
     setCategory(category);
   };
 
-  const employees = data.length;
-  const newIncrease = data.filter((item) => item.increase).length;
   return (
     <section className="app-employees-list">
       <AppInfo employees={employees} increase={newIncrease} />
-
       <div className="search-panel">
         <SearchPanel onChangeFilter={onChangeFilter} />
         <AppFilter category={category} onChangeBtn={onChangeBtn} />
       </div>
-
       <EmployeesList
         data={filteredCategory(filteredData(data, filter), category)}
         onDeleteItem={onDeleteItem}

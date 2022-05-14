@@ -7,11 +7,13 @@ const Header = () => {
   const [active, setActive] = useState(false);
 
   const onToggle = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault();
-    setActive(!active);
-    active
-      ? (document.body.style.overflow = "scroll")
-      : (document.body.style.overflow = "hidden");
+    if (document.documentElement.clientWidth <= 768) {
+      event.preventDefault();
+      setActive(!active);
+      active
+        ? (document.body.style.overflow = "scroll")
+        : (document.body.style.overflow = "hidden");
+    }
   };
 
   return (
@@ -23,8 +25,8 @@ const Header = () => {
           </div>
           <div
             className="header__menu"
-            onClick={(e) => {
-              onToggle(e);
+            onClick={(event) => {
+              onToggle(event);
             }}
           >
             <div className={`header__hamburger ${active ? "active" : ""}`}>
