@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import chip from "../../resources/img/chip.svg";
 import "./header.scss";
@@ -6,8 +6,8 @@ import "./header.scss";
 const Header = () => {
   const [active, setActive] = useState(false);
 
-  const onToggle = (e?: any) => {
-    e.preventDefault();
+  const onToggle = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
     setActive(!active);
     active
       ? (document.body.style.overflow = "scroll")
@@ -48,8 +48,8 @@ const Header = () => {
                 <Link
                   to="/"
                   className="header__link"
-                  onClick={() => {
-                    onToggle();
+                  onClick={(event) => {
+                    onToggle(event);
                   }}
                 >
                   Home
@@ -59,8 +59,8 @@ const Header = () => {
                 <Link
                   to="/marvel"
                   className="header__link"
-                  onClick={() => {
-                    onToggle();
+                  onClick={(event) => {
+                    onToggle(event);
                   }}
                 >
                   Marvel
@@ -70,8 +70,8 @@ const Header = () => {
                 <Link
                   to="/tic-tac-toe"
                   className="header__link"
-                  onClick={() => {
-                    onToggle();
+                  onClick={(event) => {
+                    onToggle(event);
                   }}
                 >
                   Tic tac toe
@@ -81,8 +81,8 @@ const Header = () => {
                 <Link
                   to="/employees-list"
                   className="header__link"
-                  onClick={() => {
-                    onToggle();
+                  onClick={(event) => {
+                    onToggle(event);
                   }}
                 >
                   Employees list

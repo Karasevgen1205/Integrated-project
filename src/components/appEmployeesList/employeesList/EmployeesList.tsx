@@ -1,6 +1,5 @@
-import { BlockLike } from "typescript";
 import EmployeesListItem from "../employeesListItem/EmployeesListItem";
-import { IEmployeesListProps, IData } from "./types";
+import { IEmployeesListProps } from "../../../interfaces/IEmployeesListData";
 import "./employeesList.scss";
 
 const EmployeesList = ({
@@ -17,9 +16,11 @@ const EmployeesList = ({
         onDeleteItem={() => {
           onDeleteItem(id);
         }}
-        onChangeProp={(e?: any) => {
-          const a = e.currentTarget.getAttribute("data-prop");
-          onChangeProp(id, a);
+        handleChangeProp={(event) => {
+          const dataProp = event.currentTarget.getAttribute("data-prop");
+          if (dataProp && (dataProp === "like" || dataProp === "increase")) {
+            onChangeProp(id, dataProp);
+          }
         }}
       />
     );
