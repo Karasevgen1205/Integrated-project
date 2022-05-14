@@ -21,6 +21,7 @@
     "sass": "^1.38.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.13.0",
     "jest": "^27.5.1"
   },
   "scripts": {
