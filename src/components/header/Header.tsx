@@ -81,6 +81,17 @@ const Header = () => {
               </li>
               <li className="header__item">
                 <Link
+                  to="/chess"
+                  className="header__link"
+                  onClick={(event) => {
+                    onToggle(event);
+                  }}
+                >
+                  Chess
+                </Link>
+              </li>
+              <li className="header__item">
+                <Link
                   to="/employees-list"
                   className="header__link"
                   onClick={(event) => {

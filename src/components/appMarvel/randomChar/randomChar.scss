@@ -1,0 +1,152 @@
+@import "../../../style/variables.scss";
+@import "../../../style/config/media.scss";
+
+.randomchar {
+  &__block {
+    display: flex;
+    height: 100%;
+    padding: 40px 35px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+  }
+  &__img {
+    margin-right: 30px;
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    &_contain {
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__btns {
+    a:nth-child(1) {
+      margin-right: 30px;
+    }
+  }
+
+  &__static {
+    position: relative;
+    height: 100%;
+    padding: 40px 35px;
+    background-color: $dark;
+    button {
+      margin-top: 13px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.045em;
+    color: #ffffff;
+    &:nth-child(2) {
+      margin-top: 33px;
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    bottom: 14px;
+    right: -37px;
+  }
+}
+
+@media (max-width: $xl) {
+  .randomchar {
+    &__img {
+      margin-right: 20px;
+
+      img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+
+      a:nth-child(1) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .randomchar {
+    &__img {
+      margin-right: 30px;
+
+      img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    &__static {
+      margin-top: 30px;
+    }
+
+    &__btns {
+      display: block;
+
+      a:nth-child(1) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .randomchar {
+    &__block {
+      flex-direction: column;
+    }
+
+    &__img {
+      margin: 0 auto 30px;
+    }
+
+    &__name {
+      text-align: center;
+    }
+
+    &__descr {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &__btns {
+      margin: 0 auto;
+    }
+  }
+}

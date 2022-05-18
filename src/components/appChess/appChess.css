@@ -1,0 +1,54 @@
+.app-chess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.board-chess {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(64px * 8);
+  height: calc(64px * 8);
+}
+
+.cell-chess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+}
+
+.cell-chess img {
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+
+.black-chess {
+  background-color: deepskyblue;
+}
+
+.white-chess {
+  background-color: #eadac1;
+}
+
+.selected-chess {
+  background-color: brown;
+}
+
+.available-chess {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #22c022;
+}
+
+.lost-chess {
+  height: calc(50vh - 60px);
+  margin-left: 50px;
+  padding: 30px;
+  background-color: lightgray;
+}
